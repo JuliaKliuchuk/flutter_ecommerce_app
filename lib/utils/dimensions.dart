@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class Dementions {
+class Dimensions {
   static double screenHeignt = Get.context!.height;
   static double screenWidth = Get.context!.width;
 

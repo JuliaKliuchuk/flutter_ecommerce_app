@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_ecommerce_app/utils/dimentions.dart';
+import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 import 'package:flutter_ecommerce_app/widgets/small_text.dart';
 
 class IconAndTextWidget extends StatelessWidget {
@@ -22,7 +22,7 @@ class IconAndTextWidget extends StatelessWidget {
         Icon(
           icon,
           color: iconColor,
-          size: Dementions.iconSize24,
+          size: Dimensions.iconSize24,
         ),
         const SizedBox(
           width: 5,

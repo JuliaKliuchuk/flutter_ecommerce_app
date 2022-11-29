@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/utils/dimentions.dart';
+import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 
 import '../utils/colors.dart';
 import '../widgets/big_text.dart';
@@ -23,9 +23,9 @@ class _MainFoodPageState extends State<MainFoodPage> {
             // header
             Container(
               padding: EdgeInsets.only(
-                  left: Dementions.width20, right: Dementions.width20),
+                  left: Dimensions.width20, right: Dimensions.width20),
               margin: EdgeInsets.only(
-                  top: Dementions.height15, bottom: Dementions.height15),
+                  top: Dimensions.height15, bottom: Dimensions.height15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -47,16 +47,16 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     ],
                   ),
                   Container(
-                    width: Dementions.height45,
-                    height: Dementions.height45,
+                    width: Dimensions.height45,
+                    height: Dimensions.height45,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dementions.radius15),
+                      borderRadius: BorderRadius.circular(Dimensions.radius15),
                       color: AppColors.mainColor,
                     ),
                     child: Icon(
                       Icons.search,
                       color: Colors.white,
-                      size: Dementions.iconSize24,
+                      size: Dimensions.iconSize24,
                     ),
                   ),
                 ],

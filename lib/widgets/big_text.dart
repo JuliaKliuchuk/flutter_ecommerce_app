@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_ecommerce_app/utils/dimentions.dart';
+import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 
 class BigText extends StatelessWidget {
   final Color? color;
@@ -22,7 +22,7 @@ class BigText extends StatelessWidget {
       maxLines: 1,
       overflow: overflow,
       style: TextStyle(
-          fontSize: size == 0 ? Dementions.font20 : size,
+          fontSize: size == 0 ? Dimensions.font20 : size,
           color: color,
           fontFamily: 'Roboto',
           fontWeight: FontWeight.w400),

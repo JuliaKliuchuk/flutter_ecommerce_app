@@ -4,7 +4,7 @@ import 'package:flutter_ecommerce_app/utils/colors.dart';
 import 'package:flutter_ecommerce_app/widgets/big_text.dart';
 import 'package:flutter_ecommerce_app/widgets/small_text.dart';
 
-import '../utils/dimentions.dart';
+import '../utils/dimensions.dart';
 import '../widgets/icon_and_text_widgets.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -18,7 +18,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
-  final double _height = Dementions.pageViewContainer;
+  final double _height = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         // slider
         SizedBox(
-          height: Dementions.pageView,
+          height: Dimensions.pageView,
           child: PageView.builder(
             controller: _pageController,
             itemCount: 5,
@@ -99,13 +99,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       transform: matrix,
       child: Stack(children: [
         Container(
-          height: Dementions.pageViewContainer,
+          height: Dimensions.pageViewContainer,
           margin: EdgeInsets.only(
-            left: Dementions.width10,
-            right: Dementions.width10,
+            left: Dimensions.width10,
+            right: Dimensions.width10,
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dementions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius30),
             color: const Color(0xFF69c5df),
             image: const DecorationImage(
               image: AssetImage('assets/image/food1.png'),
@@ -116,13 +116,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: Dementions.pageViewTextContainer,
+            height: Dimensions.pageViewTextContainer,
             margin: EdgeInsets.only(
-                left: Dementions.width30,
-                right: Dementions.width30,
-                bottom: Dementions.height30),
+                left: Dimensions.width30,
+                right: Dimensions.width30,
+                bottom: Dimensions.height30),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dementions.radius20),
+              borderRadius: BorderRadius.circular(Dimensions.radius20),
               color: Colors.white,
               boxShadow: const [
                 BoxShadow(
@@ -142,14 +142,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ),
             child: Container(
               padding: EdgeInsets.only(
-                  top: Dementions.height10,
-                  left: Dementions.width15,
-                  right: Dementions.width15),
+                  top: Dimensions.height10,
+                  left: Dimensions.width15,
+                  right: Dimensions.width15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const BigText(text: 'Chinese Side'),
-                  SizedBox(height: Dementions.height10),
+                  SizedBox(height: Dimensions.height10),
                   Row(
                     children: [
                       Wrap(
@@ -161,15 +161,15 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                   size: 15,
                                 )),
                       ),
-                      SizedBox(width: Dementions.width10),
+                      SizedBox(width: Dimensions.width10),
                       const SmallText(text: '4.5'),
-                      SizedBox(width: Dementions.width10),
+                      SizedBox(width: Dimensions.width10),
                       const SmallText(text: '1287'),
-                      SizedBox(width: Dementions.width10),
+                      SizedBox(width: Dimensions.width10),
                       const SmallText(text: 'comments'),
                     ],
                   ),
-                  SizedBox(height: Dementions.height20),
+                  SizedBox(height: Dimensions.height20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
