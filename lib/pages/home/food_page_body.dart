@@ -6,6 +6,7 @@ import 'package:flutter_ecommerce_app/widgets/small_text.dart';
 
 import '../../utils/dimensions.dart';
 import '../../utils/img_list.dart';
+import '../../widgets/app_column.dart';
 import '../../widgets/icon_and_text_widgets.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -263,52 +264,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   top: Dimensions.height10,
                   left: Dimensions.width15,
                   right: Dimensions.width15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const BigText(text: 'Chinese Side'),
-                  SizedBox(height: Dimensions.height10),
-                  Row(
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                            5,
-                            (index) => const Icon(
-                                  Icons.star,
-                                  color: AppColors.mainColor,
-                                  size: 15,
-                                )),
-                      ),
-                      SizedBox(width: Dimensions.width10),
-                      const SmallText(text: '4.5'),
-                      SizedBox(width: Dimensions.width10),
-                      const SmallText(text: '1287'),
-                      SizedBox(width: Dimensions.width10),
-                      const SmallText(text: 'comments'),
-                    ],
-                  ),
-                  SizedBox(height: Dimensions.height20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      IconAndTextWidget(
-                        icon: Icons.circle_sharp,
-                        text: 'Normal',
-                        iconColor: AppColors.iconColor1,
-                      ),
-                      IconAndTextWidget(
-                        icon: Icons.location_on,
-                        text: '1.7km',
-                        iconColor: AppColors.mainColor,
-                      ),
-                      IconAndTextWidget(
-                        icon: Icons.access_time_rounded,
-                        text: '32min',
-                        iconColor: AppColors.iconColor2,
-                      ),
-                    ],
-                  )
-                ],
+              child: const AppColumn(
+                text: 'Chinese Side',
               ),
             ),
           ),
