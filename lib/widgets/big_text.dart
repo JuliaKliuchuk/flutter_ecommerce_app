@@ -24,7 +24,7 @@ class BigText extends StatelessWidget {
       style: TextStyle(
           fontSize: size == 0 ? Dimensions.font20 : size,
           color: color,
-          fontFamily: 'Roboto',
+          fontFamily: '',
           fontWeight: FontWeight.w400),
     );
   }

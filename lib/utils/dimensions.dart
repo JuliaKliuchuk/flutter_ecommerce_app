@@ -31,4 +31,11 @@ class Dimensions {
 
   // icon size
   static double iconSize24 = screenHeignt / 35.17;
+
+  // list view size
+  static double listViewImgSize = screenWidth / 3.25;
+  static double listViewITextSize = screenWidth / 3.9;
+
+  // popular food
+  static double popularFoodImgSize = screenHeignt / 2.41;
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 
-import '../utils/colors.dart';
-import '../widgets/big_text.dart';
-import '../widgets/small_text.dart';
+import '../../utils/colors.dart';
+import '../../widgets/big_text.dart';
+import '../../widgets/small_text.dart';
 import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
@@ -62,8 +62,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ],
               ),
             ),
-            //carusel
-            const FoodPageBody(),
+
+            const Expanded(
+                child: SingleChildScrollView(
+              child: FoodPageBody(),
+            )),
           ],
         ),
       ),
