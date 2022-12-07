@@ -5,6 +5,7 @@ import 'package:flutter_ecommerce_app/widgets/big_text.dart';
 
 import '../../widgets/app_column.dart';
 import '../../widgets/app_icon.dart';
+import '../../widgets/expandable_text_widget.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({super.key});
@@ -16,6 +17,7 @@ class PopularFoodDetail extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
+            // background img
             Positioned(
               left: 0,
               right: 0,
@@ -31,6 +33,7 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
               ),
             ),
+            // header icons
             Positioned(
               top: Dimensions.height45,
               left: Dimensions.width20,
@@ -47,6 +50,7 @@ class PopularFoodDetail extends StatelessWidget {
                 ],
               ),
             ),
+            // introducrion of food
             Positioned(
               left: 0,
               right: 0,
@@ -75,15 +79,26 @@ class PopularFoodDetail extends StatelessWidget {
                       height: Dimensions.height20,
                     ),
                     const BigText(text: 'Introduce'),
+                    SizedBox(
+                      height: Dimensions.height20,
+                    ),
+                    const Expanded(
+                      child: SingleChildScrollView(
+                        child: ExpandableTextWidget(
+                            text:
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean.'),
+                      ),
+                    )
                   ],
                 ),
               ),
-            )
+            ),
+            // expandable text
           ],
         ),
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.bottomNavBarHeight,
         padding: EdgeInsets.only(
           top: Dimensions.height30,
           bottom: Dimensions.height30,

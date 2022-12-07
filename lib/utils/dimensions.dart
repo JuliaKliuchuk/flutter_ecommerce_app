@@ -22,6 +22,7 @@ class Dimensions {
   static double width30 = screenHeignt / 28.13;
 
   //font
+  static double font16 = screenHeignt / 52.75;
   static double font20 = screenHeignt / 42.2;
   static double font26 = screenHeignt / 32.46;
 
@@ -40,4 +41,7 @@ class Dimensions {
 
   // popular food
   static double popularFoodImgSize = screenHeignt / 2.41;
+
+  // height bottom nav bar
+  static double bottomNavBarHeight = screenHeignt / 7.03;
 }
