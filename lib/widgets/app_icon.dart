@@ -1,19 +1,19 @@
-import 'package:flutter/cupertino.dart';
-
-import '../utils/dimensions.dart';
+import 'package:flutter/material.dart';
 
 class AppIcon extends StatelessWidget {
   final IconData icon;
   final Color bgColor;
   final Color iconColor;
   final double size;
+  final double iconSize;
 
   const AppIcon({
     Key? key,
     required this.icon,
-    this.bgColor = const Color(0xFFfcf4e4),
-    this.iconColor = const Color(0xFF756d54),
+    this.bgColor = Colors.white,
+    this.iconColor = Colors.grey,
     this.size = 40,
+    this.iconSize = 16,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class AppIcon extends StatelessWidget {
         child: Icon(
           icon,
           color: iconColor,
-          size: Dimensions.iconSize16,
+          size: iconSize,
         ),
       ),
     );
