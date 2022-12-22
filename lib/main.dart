@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/pages/food/rerommended_food_detail.dart';
+import 'package:flutter_ecommerce_app/pages/home/main_food_page.dart';
+import 'package:flutter_ecommerce_app/routes/route_helper.dart';
 import 'package:get/get.dart';
+import 'controllers/popular_product_controller copy.dart';
+import 'controllers/recommended_product_controller copy.dart';
+import 'helper/dependencies.dart' as dep;
 
-void main() {
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // ignore: await_only_futures
+  await dep.init();
+
   runApp(const MyApp());
 }
 
@@ -11,15 +19,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.find<PopularProductController>().getPopularProductList();
+    Get.find<RecommendedProductController>().getRecommendedProductList();
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // home: const PopularFoodDetail(),
-      // home: const PopularFoodDetail(),
-      home: const RecommendedFoodDetail(),
+      home: const MainFoodPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 }
