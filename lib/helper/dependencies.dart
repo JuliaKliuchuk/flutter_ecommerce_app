@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:flutter_ecommerce_app/data/repository/popular_product_repo.dart';
 import '../data/repository/recommended_product_repo.dart';
 
-import '../controllers/popular_product_controller copy.dart';
-import '../controllers/recommended_product_controller copy.dart';
+import '../controllers/popular_product_controller.dart';
+import '../controllers/recommended_product_controller.dart';
 
 Future<void> init() async {
   // api client

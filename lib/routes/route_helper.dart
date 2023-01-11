@@ -13,14 +13,18 @@ class RouteHelper {
   static String getRecommendedFood() => recommendedFood;
 
   static List<GetPage> routes = [
-    GetPage(name: '/', page: () => const MainFoodPage()),
+    // initial
+    GetPage(name: initial, page: () => const MainFoodPage()),
+    //popularFood
     GetPage(
       name: popularFood,
       page: () {
-        return const PopularFoodDetail();
+        var pageId = Get.parameters['pageId'];
+        return PopularFoodDetail(pageId: int.parse(pageId!));
       },
       transition: Transition.fadeIn,
     ),
+    // recommendedFood
     GetPage(
       name: recommendedFood,
       page: () {

@@ -8,8 +8,8 @@ import 'package:flutter_ecommerce_app/widgets/big_text.dart';
 import 'package:flutter_ecommerce_app/widgets/small_text.dart';
 import 'package:get/get.dart';
 
-import '../../controllers/popular_product_controller copy.dart';
-import '../../controllers/recommended_product_controller copy.dart';
+import '../../controllers/popular_product_controller.dart';
+import '../../controllers/recommended_product_controller.dart';
 import '../../utils/dimensions.dart';
 import '../../widgets/app_column.dart';
 import '../../widgets/icon_and_text_widgets.dart';
