@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/controllers/popular_product_controller.dart';
+import 'package:flutter_ecommerce_app/utils/app_constants.dart';
 import 'package:flutter_ecommerce_app/utils/colors.dart';
 import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 import 'package:flutter_ecommerce_app/widgets/big_text.dart';
@@ -10,10 +12,15 @@ import '../../widgets/app_icon.dart';
 import '../../widgets/expandable_text_widget.dart';
 
 class PopularFoodDetail extends StatelessWidget {
-  const PopularFoodDetail({super.key});
+  int pageId;
+
+  PopularFoodDetail({Key? key, required this.pageId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var product =
+        Get.find<PopularProductController>().popularProductList[pageId];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -26,11 +33,13 @@ class PopularFoodDetail extends StatelessWidget {
               child: Container(
                 width: double.maxFinite,
                 height: Dimensions.popularFoodImgSize,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.amber,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/image/food5.png'),
+                    image: NetworkImage(AppConstans.BASE_URL +
+                        AppConstans.UPLOAD_URL +
+                        product.img),
                   ),
                 ),
               ),
@@ -79,8 +88,8 @@ class PopularFoodDetail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const AppColumn(
-                      text: 'Chinese Side',
+                    AppColumn(
+                      text: product.name!,
                     ),
                     SizedBox(
                       height: Dimensions.height20,
@@ -89,11 +98,9 @@ class PopularFoodDetail extends StatelessWidget {
                     SizedBox(
                       height: Dimensions.height20,
                     ),
-                    const Expanded(
+                    Expanded(
                       child: SingleChildScrollView(
-                        child: ExpandableTextWidget(
-                            text:
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean.'),
+                        child: ExpandableTextWidget(text: product.description!),
                       ),
                     )
                   ],
@@ -163,7 +170,7 @@ class PopularFoodDetail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: AppColors.mainColor,
               ),
-              child: const BigText(text: '\$10 | Add to cart'),
+              child: BigText(text: '\$ ${product.price!} | Add to cart'),
             )
           ],
         ),

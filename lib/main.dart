@@ -8,7 +8,7 @@ import 'helper/dependencies.dart' as dep;
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // ignore: await_only_futures
+
   await dep.init();
 
   runApp(const MyApp());
