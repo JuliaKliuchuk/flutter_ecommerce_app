@@ -47,7 +47,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // slider
+        // slider popular food
         GetBuilder<PopularProductController>(builder: (popularProducts) {
           return popularProducts.isLoaded
               ? SizedBox(
@@ -95,6 +95,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   height: Dimensions.height20,
                 );
         }),
+
         // title list
         Container(
           margin: EdgeInsets.only(
@@ -126,7 +127,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ],
           ),
         ),
-        // list products card
+
+        // list recommended products
         GetBuilder<RecommendedProductController>(
             builder: (recommendedProducts) {
           return recommendedProducts.isLoaded
@@ -137,7 +139,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        Get.toNamed(RouteHelper.getRecommendedFood());
+                        Get.toNamed(RouteHelper.getRecommendedFood(index));
                       },
                       child: Container(
                         margin: EdgeInsets.only(

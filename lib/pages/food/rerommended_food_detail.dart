@@ -6,13 +6,19 @@ import 'package:flutter_ecommerce_app/widgets/big_text.dart';
 import 'package:flutter_ecommerce_app/widgets/expandable_text_widget.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/recommended_product_controller.dart';
 import '../../routes/route_helper.dart';
+import '../../utils/app_constants.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
-  const RecommendedFoodDetail({super.key});
+  final int pageId;
+  const RecommendedFoodDetail({Key? key, required this.pageId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var product =
+        Get.find<RecommendedProductController>().recommendedProductList[pageId];
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -51,18 +57,18 @@ class RecommendedFoodDetail extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 5, bottom: 10),
                   child: Center(
                     child: BigText(
-                      text: 'Sliver app bar',
+                      text: product.name!,
                       size: Dimensions.font26,
                     ),
                   ),
                 ),
               ),
-              expandedHeight: 300,
+              expandedHeight: 400,
               pinned: true,
               backgroundColor: AppColors.yellowColor,
               flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset(
-                  'assets/image/food4.png',
+                background: Image.network(
+                  AppConstans.BASE_URL + AppConstans.UPLOAD_URL + product.img,
                   width: double.maxFinite,
                   fit: BoxFit.cover,
                 ),
@@ -78,10 +84,10 @@ class RecommendedFoodDetail extends StatelessWidget {
                     top: Dimensions.height10,
                     bottom: Dimensions.height20,
                   ),
-                  child: const ExpandableTextWidget(
-                      text:
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh nisl condimentum id venenatis a condimentum vitae. Sed risus ultricies tristique nulla aliquet enim tortor. Nec nam aliquam sem et tortor. Tellus orci ac auctor augue mauris augue neque gravida in. Et netus et malesuada fames. Netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Sed arcu non odio euismod lacinia at quis risus. Et sollicitudin ac orci phasellus egestas tellus rutrum. Tincidunt ornare massa eget egestas purus viverra accumsan. Fusce id velit ut tortor pretium viverra. Varius sit amet mattis vulputate enim. Dui accumsan sit amet nulla facilisi. Urna duis convallis convallis tellus. Malesuada fames ac turpis egestas. In massa tempor nec feugiat. Lorem donec massa sapien faucibus et. Sed ullamcorper morbi tincidunt ornare. Elit sed vulputate mi sit amet. Nulla aliquet porttitor lacus luctus accumsan. Velit scelerisque in dictum non. Enim diam vulputate ut pharetra sit amet aliquam id. Pharetra et ultrices neque ornare aenean'),
-                ),
+                  child: ExpandableTextWidget(
+                    text: product.description!,
+                  ),
+                )
               ],
             ))
           ],
@@ -107,7 +113,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                   iconSize: Dimensions.iconSize24,
                 ),
                 BigText(
-                  text: '\$12.88 X 0',
+                  text: '\$ ${product.price!} X 0',
                   color: AppColors.mainBlackColor,
                   size: Dimensions.font26,
                 ),
@@ -164,8 +170,8 @@ class RecommendedFoodDetail extends StatelessWidget {
                     borderRadius: BorderRadius.circular(Dimensions.radius20),
                     color: AppColors.mainColor,
                   ),
-                  child: const BigText(
-                    text: '\$28 | Add to cart',
+                  child: BigText(
+                    text: '\$ ${product.price!} | Add to cart',
                     color: Colors.white,
                   ),
                 )
