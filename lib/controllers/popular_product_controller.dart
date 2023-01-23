@@ -5,6 +5,8 @@ import 'package:flutter_ecommerce_app/models/products_model.dart';
 import 'package:flutter_ecommerce_app/utils/colors.dart';
 import 'package:get/get.dart';
 
+import '../models/cart_model.dart';
+
 class PopularProductController extends GetxController {
   final PopularProductRepo popularProductRepo;
 
@@ -37,8 +39,10 @@ class PopularProductController extends GetxController {
   void setQuantity(bool isInc) {
     if (isInc) {
       _quantity = checkQuantity(_quantity + 1);
+      print('_quantity+++${_quantity.toString()}');
     } else {
       _quantity = checkQuantity(_quantity - 1);
+      print('_quantity---${_quantity.toString()}');
     }
     update();
   }
@@ -52,6 +56,12 @@ class PopularProductController extends GetxController {
         backgroundColor: AppColors.mainColor,
         colorText: Colors.white,
       );
+
+      if (_inCartItems > 0) {
+        _quantity = -_inCartItems;
+        return _quantity;
+      }
+
       return 0;
     } else if ((_inCartItems + quantity) > 20) {
       Get.snackbar(
@@ -94,5 +104,9 @@ class PopularProductController extends GetxController {
 
   int get totalItems {
     return _cart.totalItems;
+  }
+
+  List<CartModel> get getItems {
+    return _cart.getItems;
   }
 }
