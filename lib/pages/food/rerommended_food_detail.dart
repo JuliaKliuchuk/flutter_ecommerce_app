@@ -11,7 +11,6 @@ import '../../controllers/cart_controller.dart';
 import '../../controllers/recommended_product_controller.dart';
 import '../../routes/route_helper.dart';
 import '../../utils/app_constants.dart';
-import '../cart/cart_page.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
   final int pageId;
@@ -57,7 +56,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                                 top: 0,
                                 child: GestureDetector(
                                   onTap: () {
-                                    Get.to(() => const CartPage());
+                                    Get.toNamed(RouteHelper.getCartPage());
                                   },
                                   child: const AppIcon(
                                     icon: Icons.circle,

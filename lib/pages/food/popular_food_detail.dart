@@ -11,7 +11,6 @@ import '../../routes/route_helper.dart';
 import '../../widgets/app_column.dart';
 import '../../widgets/app_icon.dart';
 import '../../widgets/expandable_text_widget.dart';
-import '../cart/cart_page.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   final int pageId;
@@ -77,7 +76,7 @@ class PopularFoodDetail extends StatelessWidget {
                                 top: 0,
                                 child: GestureDetector(
                                   onTap: () {
-                                    Get.to(() => const CartPage());
+                                    Get.toNamed(RouteHelper.getCartPage());
                                   },
                                   child: const AppIcon(
                                     icon: Icons.circle,
