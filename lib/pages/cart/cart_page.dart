@@ -25,9 +25,9 @@ class CartPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: () {
-                  Get.toNamed(RouteHelper.getInitial());
-                },
+                // onTap: () {
+                //   Get.toNamed(RouteHelper.getInitial());
+                // },
                 child: AppIcon(
                   icon: Icons.arrow_back_ios,
                   iconColor: Colors.white,
