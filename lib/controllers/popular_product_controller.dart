@@ -39,10 +39,8 @@ class PopularProductController extends GetxController {
   void setQuantity(bool isInc) {
     if (isInc) {
       _quantity = checkQuantity(_quantity + 1);
-      print('_quantity+++${_quantity.toString()}');
     } else {
       _quantity = checkQuantity(_quantity - 1);
-      print('_quantity---${_quantity.toString()}');
     }
     update();
   }
