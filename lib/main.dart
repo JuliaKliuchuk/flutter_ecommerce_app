@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/routes/route_helper.dart';
 import 'package:get/get.dart';
-import 'controllers/popular_product_controller.dart';
-import 'controllers/recommended_product_controller.dart';
 import 'helper/dependencies.dart' as dep;
 
 main() async {
@@ -18,13 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<PopularProductController>().getPopularProductList();
-    Get.find<RecommendedProductController>().getRecommendedProductList();
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      initialRoute: RouteHelper.getInitial(),
+      initialRoute: RouteHelper.getSplashScreen(),
       getPages: RouteHelper.routes,
     );
   }

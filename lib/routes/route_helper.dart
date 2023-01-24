@@ -1,16 +1,19 @@
 import 'package:flutter_ecommerce_app/pages/food/popular_food_detail.dart';
 import 'package:flutter_ecommerce_app/pages/food/rerommended_food_detail.dart';
+import 'package:flutter_ecommerce_app/pages/splash/splash_page.dart';
 import 'package:get/get.dart';
 
 import '../pages/cart/cart_page.dart';
 import '../pages/home/home_page.dart';
 
 class RouteHelper {
+  static const String splashScreen = '/splash-screen';
   static const String initial = '/';
   static const String popularFood = '/popular-food';
   static const String recommendedFood = '/recommended-food';
   static const String cartPage = '/cart-page';
 
+  static String getSplashScreen() => splashScreen;
   static String getInitial() => initial;
   static String getPopularFood(int pageId, String? page) =>
       '$popularFood?pageId=$pageId&page=$page';
@@ -19,6 +22,9 @@ class RouteHelper {
   static String getCartPage() => cartPage;
 
   static List<GetPage> routes = [
+    // splashScreen
+    GetPage(name: splashScreen, page: () => const SplashScreen()),
+
     // initial
     GetPage(name: initial, page: () => const HomePage()),
 
@@ -51,7 +57,7 @@ class RouteHelper {
       transition: Transition.fadeIn,
     ),
 
-    // cart page
+    // cartPage
     GetPage(
       name: cartPage,
       page: () {
