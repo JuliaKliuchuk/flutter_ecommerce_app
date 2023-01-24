@@ -1,9 +1,9 @@
 import 'package:flutter_ecommerce_app/pages/food/popular_food_detail.dart';
 import 'package:flutter_ecommerce_app/pages/food/rerommended_food_detail.dart';
-import 'package:flutter_ecommerce_app/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
 
 import '../pages/cart/cart_page.dart';
+import '../pages/home/home_page.dart';
 
 class RouteHelper {
   static const String initial = '/';
@@ -20,7 +20,7 @@ class RouteHelper {
 
   static List<GetPage> routes = [
     // initial
-    GetPage(name: initial, page: () => const MainFoodPage()),
+    GetPage(name: initial, page: () => const HomePage()),
 
     //popularFood
     GetPage(
