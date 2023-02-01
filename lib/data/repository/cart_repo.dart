@@ -75,10 +75,7 @@ class CartRepo {
 
     sharedPreferences.setStringList(AppConstans.CART_HISTORY_LIST, cartHistory);
 
-    print('getCartHistoryList-----${getCartHistoryList().length.toString()}');
-    for (var i = 0; i < getCartHistoryList().length; i++) {
-      print('time-----${getCartHistoryList()[i].time.toString()}');
-    }
+    for (var i = 0; i < getCartHistoryList().length; i++) {}
   }
 
   void removeCart() {

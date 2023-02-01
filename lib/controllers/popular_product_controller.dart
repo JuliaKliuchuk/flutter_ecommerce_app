@@ -50,7 +50,7 @@ class PopularProductController extends GetxController {
       Get.snackbar(
         'Item count',
         'You can\'t reduce more !',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
         backgroundColor: AppColors.mainColor,
         colorText: Colors.white,
       );
@@ -65,7 +65,7 @@ class PopularProductController extends GetxController {
       Get.snackbar(
         'Item count',
         'You can\'t add more !',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
         backgroundColor: AppColors.mainColor,
         colorText: Colors.white,
       );
