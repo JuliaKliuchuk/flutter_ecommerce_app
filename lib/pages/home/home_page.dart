@@ -16,13 +16,9 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     const MainFoodPage(),
-    Container(
-      child: const Center(child: Text('history')),
-    ),
+    const Center(child: Text('history')),
     const CartHistory(),
-    Container(
-      child: const Center(child: Text('profile')),
-    ),
+    const Center(child: Text('profile')),
   ];
 
   void onTapNav(int index) {
