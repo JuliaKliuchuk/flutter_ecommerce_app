@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce_app/pages/home/main_food_page.dart';
 import 'package:flutter_ecommerce_app/utils/colors.dart';
 
 import '../account/account_page.dart';
+import '../auth/sign_up_page.dart';
 import '../cart/cart_history.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     const MainFoodPage(),
-    const Center(child: Text('history')),
+    const SignUpPage(),
     const CartHistory(),
     const AccountPage(),
   ];
