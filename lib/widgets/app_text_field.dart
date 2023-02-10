@@ -7,12 +7,14 @@ class AppTextFieldWidget extends StatelessWidget {
   final TextEditingController textController;
   final String hintText;
   final IconData icon;
+  final Color iconColor;
 
   const AppTextFieldWidget({
     super.key,
     required this.textController,
     required this.hintText,
     required this.icon,
+    this.iconColor = AppColors.yellowColor,
   });
 
   @override
@@ -39,7 +41,7 @@ class AppTextFieldWidget extends StatelessWidget {
           hintText: hintText,
           prefixIcon: Icon(
             icon,
-            color: AppColors.yellowColor,
+            color: iconColor,
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(Dimensions.radius30),
