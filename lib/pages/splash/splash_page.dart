@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/controllers/popular_product_controller.dart';
 import 'package:flutter_ecommerce_app/controllers/recommended_product_controller.dart';
 import 'package:flutter_ecommerce_app/routes/route_helper.dart';
-import 'package:flutter_ecommerce_app/utils/colors.dart';
 import 'package:flutter_ecommerce_app/utils/dimensions.dart';
-import 'package:flutter_ecommerce_app/widgets/big_text.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -50,6 +48,7 @@ class _SplashPageState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -57,15 +56,20 @@ class _SplashPageState extends State<SplashScreen>
             scale: animation,
             child: Center(
               child: Image.asset(
-                'assets/image/logo_2.png',
+                'assets/image/logo_1.png',
                 width: Dimensions.splashImg,
               ),
             ),
           ),
-          const BigText(
-            text: 'The Best Food',
-            size: 30,
-            color: AppColors.mainColor,
+          // const BigText(
+          //   text: 'The Best Food',
+          //   size: 30,
+          //   color: AppColors.mainColor,
+          // ),
+
+          Image.asset(
+            'assets/image/logo_2.png',
+            width: Dimensions.splashImg,
           )
         ],
       ),

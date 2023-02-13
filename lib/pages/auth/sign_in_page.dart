@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
               child: const Center(
                 child: CircleAvatar(
                   radius: 80,
-                  backgroundImage: AssetImage('assets/image/logo_2.png'),
+                  backgroundImage: AssetImage('assets/image/logo_1.png'),
                   backgroundColor: Colors.white,
                 ),
               ),
