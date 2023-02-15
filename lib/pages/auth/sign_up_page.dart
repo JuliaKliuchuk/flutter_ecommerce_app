@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/controllers/auth_controller.dart';
+import 'package:flutter_ecommerce_app/routes/route_helper.dart';
 import 'package:flutter_ecommerce_app/utils/dimensions.dart';
 import 'package:get/get.dart';
 
@@ -74,7 +75,7 @@ class SignUpPage extends StatelessWidget {
 
         authController.registration(signUpData).then((status) {
           if (status.isSuccess) {
-            print('Success registration');
+            Get.offNamed(RouteHelper.getInitial());
           } else {
             showCustomSnackBar(status.message);
           }

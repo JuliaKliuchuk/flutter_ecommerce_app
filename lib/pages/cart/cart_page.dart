@@ -32,7 +32,7 @@ class CartPage extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Get.back();
+                    Get.toNamed(RouteHelper.getInitial());
                   },
                   child: AppIcon(
                     icon: Icons.arrow_back_ios,
@@ -293,7 +293,6 @@ class CartPage extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           if (Get.find<AuthController>().userLoggedIn()) {
-                            print('user logged');
                             cartController.addToHistory();
                           } else {
                             Get.toNamed(RouteHelper.getSignInPage());

@@ -1,32 +1,38 @@
 import 'package:flutter_ecommerce_app/utils/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiClient extends GetConnect implements GetxService {
   late String token;
   final String appBaseUrl;
+  late SharedPreferences sharedPreferences;
 
-  late Map<String, String> mainHeaders;
+  late Map<String, String> _mainHeaders;
 
-  ApiClient({required this.appBaseUrl}) {
+  ApiClient({
+    required this.appBaseUrl,
+    required this.sharedPreferences,
+  }) {
     baseUrl = appBaseUrl;
     timeout = const Duration(seconds: 30);
-    token = AppConstans.TOKEN;
-    mainHeaders = {
+    token = sharedPreferences.getString(AppConstans.TOKEN) ?? '';
+    _mainHeaders = {
       'Content-type': 'application/json; charset=UTF-8',
-      'Autorization': 'Bearer $token',
+      'Authorization': 'Bearer $token',
     };
   }
 
   void updateHeader(String token) {
-    mainHeaders = {
+    _mainHeaders = {
       'Content-type': 'application/json; charset=UTF-8',
-      'Autorization': 'Bearer $token',
+      'Authorization': 'Bearer $token',
     };
   }
 
-  Future<Response> getData(String url) async {
+  Future<Response> getData(String url, {Map<String, String>? headers}) async {
     try {
-      Response response = await get(url);
+      Response response = await get(url, headers: headers ?? _mainHeaders);
+
       return response;
     } catch (e) {
       return Response(statusCode: 1, statusText: e.toString());
@@ -34,16 +40,14 @@ class ApiClient extends GetConnect implements GetxService {
   }
 
   Future<Response> postData(String url, dynamic body) async {
-    print('body----------${body.toString()}');
     try {
       Response response = await post(
         url,
         body,
-        headers: mainHeaders,
+        headers: _mainHeaders,
       );
       return response;
     } catch (e) {
-      print(e.toString());
       return Response(statusCode: 1, statusText: e.toString());
     }
   }

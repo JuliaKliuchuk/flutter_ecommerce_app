@@ -1,6 +1,8 @@
 import 'package:flutter_ecommerce_app/controllers/auth_controller.dart';
+import 'package:flutter_ecommerce_app/controllers/user_controller.dart';
 import 'package:flutter_ecommerce_app/data/api/api_client.dart';
 import 'package:flutter_ecommerce_app/data/repository/auth_repo.dart';
+import 'package:flutter_ecommerce_app/data/repository/user_repo.dart';
 import 'package:flutter_ecommerce_app/utils/app_constants.dart';
 import 'package:get/get.dart';
 
@@ -19,11 +21,15 @@ Future<void> init() async {
   Get.lazyPut(() => sharedPreferences);
 
   // api client
-  Get.lazyPut(() => ApiClient(appBaseUrl: AppConstans.BASE_URL));
+  Get.lazyPut(() => ApiClient(
+        appBaseUrl: AppConstans.BASE_URL,
+        sharedPreferences: Get.find(),
+      ));
   Get.lazyPut(() => AuthRepo(
         apiClient: Get.find(),
         sharedPreferences: Get.find(),
       ));
+  Get.lazyPut(() => UserRepo(apiClient: Get.find()));
 
   // repository
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
@@ -36,4 +42,5 @@ Future<void> init() async {
       () => RecommendedProductController(recommendedProductRepo: Get.find()));
   Get.lazyPut(() => CartController(cartRepo: Get.find()));
   Get.lazyPut(() => AuthController(authRepo: Get.find()));
+  Get.lazyPut(() => UserController(userRepo: Get.find()));
 }
