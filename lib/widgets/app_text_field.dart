@@ -9,12 +9,15 @@ class AppTextFieldWidget extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
 
+  final bool isObscure;
+
   const AppTextFieldWidget({
     super.key,
     required this.textController,
     required this.hintText,
     required this.icon,
     this.iconColor = AppColors.yellowColor,
+    this.isObscure = false,
   });
 
   @override
@@ -26,16 +29,17 @@ class AppTextFieldWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(Dimensions.radius30),
+        borderRadius: BorderRadius.circular(Dimensions.radius15),
         boxShadow: [
           BoxShadow(
               blurRadius: 10,
               spreadRadius: 7,
-              offset: const Offset(1, 10),
+              offset: const Offset(1, 1),
               color: Colors.grey.withOpacity(0.2))
         ],
       ),
       child: TextField(
+        obscureText: isObscure,
         controller: textController,
         decoration: InputDecoration(
           hintText: hintText,
@@ -44,21 +48,21 @@ class AppTextFieldWidget extends StatelessWidget {
             color: iconColor,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: const BorderSide(
               width: 1.0,
               color: Colors.white,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: const BorderSide(
               width: 1.0,
               color: Colors.white,
             ),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
           ),
         ),
       ),
