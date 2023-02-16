@@ -4,6 +4,9 @@
         android:label="flutter_ecommerce_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+          <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="2AIzaSyCWZrZ_oRjvvxn3Upkhf5DpTlPuzRmuxag" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
