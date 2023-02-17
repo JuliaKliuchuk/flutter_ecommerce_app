@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_ecommerce_app/models/response_model.dart';
 import 'package:flutter_ecommerce_app/models/user_model.dart';
 import 'package:get/get.dart';
@@ -23,6 +25,8 @@ class UserController extends GetxController implements GetxService {
 
     if (response.statusCode == 200) {
       _userModel = UserModel.fromJson(response.body);
+
+      log(response.body.toString());
 
       _isLoading = true;
       responseModel = ResponseModel(true, 'successfully');

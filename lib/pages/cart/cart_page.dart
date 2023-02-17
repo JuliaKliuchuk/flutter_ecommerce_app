@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/controllers/auth_controller.dart';
 import 'package:flutter_ecommerce_app/controllers/cart_controller.dart';
+import 'package:flutter_ecommerce_app/controllers/location_controller.dart';
 import 'package:flutter_ecommerce_app/controllers/popular_product_controller.dart';
 import 'package:flutter_ecommerce_app/utils/colors.dart';
 import 'package:flutter_ecommerce_app/utils/dimensions.dart';
@@ -294,6 +295,11 @@ class CartPage extends StatelessWidget {
                         onTap: () {
                           if (Get.find<AuthController>().userLoggedIn()) {
                             cartController.addToHistory();
+                            if (Get.find<LocationController>()
+                                .addressList
+                                .isEmpty) {
+                              Get.toNamed(RouteHelper.getAddressPage());
+                            }
                           } else {
                             Get.toNamed(RouteHelper.getSignInPage());
                           }

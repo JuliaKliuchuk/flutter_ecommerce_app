@@ -100,16 +100,20 @@ class AccountPage extends StatelessWidget {
                                 SizedBox(height: Dimensions.height20),
 
                                 // adress
-                                AccountWidget(
-                                  icon: AppIcon(
-                                    icon: Icons.location_on,
-                                    bgColor: AppColors.yellowColor,
-                                    iconColor: Colors.white,
-                                    iconSize: Dimensions.height10 * 5 / 2,
-                                    size: Dimensions.height10 * 5,
+                                GestureDetector(
+                                  onTap: () =>
+                                      Get.toNamed(RouteHelper.getAddressPage()),
+                                  child: AccountWidget(
+                                    icon: AppIcon(
+                                      icon: Icons.location_on,
+                                      bgColor: AppColors.yellowColor,
+                                      iconColor: Colors.white,
+                                      iconSize: Dimensions.height10 * 5 / 2,
+                                      size: Dimensions.height10 * 5,
+                                    ),
+                                    text: const BigText(
+                                        text: 'Fill in your adress'),
                                   ),
-                                  text: const BigText(
-                                      text: 'Fill in your adress'),
                                 ),
                                 SizedBox(height: Dimensions.height20),
 
