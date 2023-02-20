@@ -21,7 +21,7 @@ class UserController extends GetxController implements GetxService {
 
   Future<ResponseModel> getUserData() async {
     Response response = await userRepo.getUserData();
-    late ResponseModel responseModel;
+    ResponseModel responseModel;
 
     if (response.statusCode == 200) {
       _userModel = UserModel.fromJson(response.body);
